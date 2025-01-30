@@ -1,1 +1,1 @@
-OSU’s Premier South Asian A Cappella Competition 2025 ASA bid comp!
+This repository contains the code for the website of Buckeye Laya, Ohio State University's premier South Asian a cappella competition.
