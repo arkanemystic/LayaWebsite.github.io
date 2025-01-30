@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Acapella Competition</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buckeye Laya</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
@@ -9,7 +12,15 @@
         <a href="about.html">About</a>
         <a href="tickets.html">Tickets</a>
     </nav>
-    <div class="hero">Welcome to the Acapella Competition!</div>
+
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="videos/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-text">Buckeye Laya 1.0</div>
+    </div>
+
     <div class="container">
         <div class="flex-container">
             <div class="flex-item">Main Event Details</div>
@@ -18,6 +29,7 @@
             </div>
         </div>
     </div>
+    
     <a href="tickets.html" class="floating-button">Buy Tickets</a>
     <script src="js/scripts.js"></script>
 </body>
