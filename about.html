@@ -3,6 +3,72 @@
 <head>
     <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        .content-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .subsection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .subsection {
+            background-color: #FFD6E0;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .subsection img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .about-description {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #A6E3E9;
+            border-radius: 15px;
+        }
+
+        .nav-logo {
+            height: 60px;
+            width: auto;
+            margin-right: 10000px;
+        }
+
+        .nav-links {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .nav-links a {
+            font-family: 'Lucidity Condensed', sans-serif;
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF8FAB;
+        }
+
+        body {
+            padding-top: 60px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -10,9 +76,92 @@
         <a href="about.html">About</a>
         <a href="tickets.html">Tickets</a>
     </nav>
+    
     <div class="container">
-        <h1>About the Competition</h1>
-        <div class="flex-item">Meet the Teams and Judges</div>
+        <section class="content-section">
+            <h1>About Buckeye Laya</h1>
+            <div class="about-description">
+                <!-- Main description paragraph area -->
+                <p>Buckeye Laya is Ohio State University’s premier South Asian fusion a cappella competition, celebrating the vibrant intersection of Bollywood, Indian classical, and contemporary Western music. A stage where Desi meets Pitch Perfect, BuckeyeLaya provides a platform for top collegiate a cappella teams to showcase their vocal artistry, creativity, and cultural storytelling in an electrifying competition.</p>
+                <p>Each year, the competition continues to grow, featuring elite teams that go on to make their mark in prestigious circuits like All-American Awaaz (A3) and ICCA (International Championship of Collegiate A Cappella). Hosted by Dhadkan, Ohio State’s premier South Asian fusion a cappella team, Buckeye Laya stands as a cornerstone of musical excellence, uniting over a hundred passionate performers and fans in a celebration of culture, creativity, and competition.
+
+
+
+
+
+
+
+                </p>
+            </div>
+            
+            <div class="subsection-grid">
+                <div class="subsection">
+                    <h3>Directors</h3>
+                    <p>Vibha Ramesh, Yadnya Sonawane, Vidya Rajagopalan</p>
+                    <img src="images/directors.jpg" alt="directors">
+                </div>
+                <div class="subsection">
+                    <h3>Liaison Coordinators</h3>
+                    <p>Animesh Rajagopalan, Sahana Rajesh</p>
+                    <img src="images/liaison.jpg" alt="liaison">
+                </div>
+                <div class="subsection">
+                    <h3>Logistics</h3>
+                    <p>Akshaya Iyer, Ishwarya Iyer, Harini Senthil, Avi Jain, Udita Kale</p>
+                    <img src="images/logistics.jpg" alt="logistics">
+                </div>
+                <div class="subsection">
+                    <h3>Hospitality</h3>
+                    <p>Rakshu Sankarraman, Neha Bellamkonda, Swathy Shankar, Saloni Patel</p>
+                    <img src="images/hospitality.jpg" alt="hospital">
+                </div>
+                <div class="subsection">
+                    <h3>Fundraising & Sponsorship</h3>
+                    <p>Nithya Venkat, Avneesh Pradhan</p>
+                    <img src="images/funds.jpg" alt="funds">
+                </div>
+                <div class="subsection">
+                    <h3>Marketing</h3>
+                    <p>Deepa Manikandan, Seton Buehrer</p>
+                    <img src="images/marketing.jpg" alt="marketing">
+                </div>
+                <div class="subsection">
+                    <h3>Afterparty & Mixer</h3>
+                    <p>Ahan Parikh, Pranav Purma, Savir Krishnan</p>
+                    <img src="images/AP.jpg" alt="AP">
+                </div>
+                <div class="subsection">
+                    <h3>Judging</h3>
+                    <p>Nandita Gaddam</p>
+                    <img src="images/judging.jpg" alt="Judging">
+                </div>
+                <div class="subsection">
+                    <h3>Tech</h3>
+                    <p>Sadhika Kamchetty, Kethan Modakam, Aarini Shah</p>
+                    <img src="images/tech1.jpg" alt="Tech1">
+                    <img src="images/tech2.jpg" alt="Tech2">
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h1>About ASA</h1>
+            <div class="about-description">
+                <p>The Association of South-Asian A Cappella is a registered 501(c)(3) non-profit dedicated to championing the unique fusion musical genre of South Asian A Cappella – what we love to refer to as Desi meets Pitch Perfect – a young art form we see as the perfect blend of our South Asian heritage and the Western culture we live around.</p>
+                
+                <p>Through its pioneering efforts, ASA has played an instrumental role in shaping the collegiate South Asian music landscape across the United States.</p>
+                
+                <p>In the last decade, South Asian A Cappella has flourished, with our teams consistently making their mark in prestigious competitions like A3 (All-American Awaaz) and ICCA (International Championship of Collegiate A Cappella). We support 85 teams, 8 competitions, and more than 2,000 participants annually across 25 states in the South Asian A Cappella circuit through various initiatives.</p>
+
+                <div class="button-container">
+                    <a href="https://desiacappella.org/" target="_blank">
+                        <button>ASA Website</button>
+                    </a>
+                    <a href="tickets.html" class="floating-button">Buy Tickets</a>
+                </div>
+
+            </div>
+        </section>
     </div>
 </body>
 </html>
