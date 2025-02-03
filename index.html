@@ -5,8 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buckeye Laya</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .livestream-section {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .event-info {
+            background-color: #FFD6E0;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .event-details {
+            margin-bottom: 2rem;
+        }
+
+        .event-detail-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .event-icon {
+            width: 24px;
+            flex-shrink: 0;
+        }
+
+        .event-detail-content {
+            flex: 1;
+        }
+
+        .event-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+            color: #444;
+        }
+
+        .event-description p {
+            margin-bottom: 1rem;
+        }
+
+        .event-detail-label {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
 </head>
-<body>
+<body class="home-page">
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -18,14 +105,60 @@
             <source src="videos/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="hero-text">Buckeye Laya 1.0</div>
+        <div class="hero-text">
+            <img src="images/logo.png" alt="Buckeye Laya Logo">
+        </div>        
     </div>
 
     <div class="container">
         <div class="flex-container">
-            <div class="flex-item">Main Event Details</div>
-            <div class="flex-item">
-                <iframe src="https://www.youtube.com/embed/WYDSzcI89EA" allowfullscreen></iframe>
+            <div class="livestream-section">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/WYDSzcI89EA" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="event-info">
+                <h2>BuckeyeLaya 2025 – Event Details</h2>
+                
+                <div class="event-details">
+                    <div class="event-detail-row">
+                        <span class="event-icon">📅</span>
+                        <div class="event-detail-content">
+                            <span class="event-detail-label">Date:</span>
+                            February 8th, 2025
+                        </div>
+                    </div>
+                    
+                    <div class="event-detail-row">
+                        <span class="event-icon">⏰</span>
+                        <div class="event-detail-content">
+                            <span class="event-detail-label">Time:</span>
+                            5:30 PM
+                        </div>
+                    </div>
+                    
+                    <div class="event-detail-row">
+                        <span class="event-icon">📍</span>
+                        <div class="event-detail-content">
+                            <span class="event-detail-label">Location:</span>
+                            Lincoln Theatre, 769 E Long St, Columbus, OH 43203
+                        </div>
+                    </div>
+                    
+                    <div class="event-detail-row">
+                        <span class="event-icon">🎉</span>
+                        <div class="event-detail-content">
+                            <span class="event-detail-label">After Party:</span>
+                            A&R Music Bar, 391 Neil Ave, Columbus, OH 43215
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-description">
+                    <p>Join us for an electrifying night of South Asian fusion a cappella as top collegiate teams take the stage at <strong>BuckeyeLaya 2025</strong>! Hosted by <strong>Dhadkan</strong>, Ohio State's premier South Asian a cappella team, this event will showcase the perfect blend of Bollywood, Indian classical, and Western music in a high-energy competition.</p>
+                    <p>Stick around after the show for an unforgettable after-party at <strong>A&R Music Bar</strong>, where performers and fans alike can celebrate a night of musical excellence!</p>
+                </div>
             </div>
         </div>
     </div>
