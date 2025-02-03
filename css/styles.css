@@ -29,14 +29,26 @@ body {
 }
 
 nav {
-    background-color: #A6E3E9; /* Light blue */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     padding: 20px;
     text-align: center;
+    z-index: 1000;
+}
+
+.home-page nav {
+    background: rgba(0, 0, 0, 0) !important; /* Fully transparent for home page */
+}
+
+:not(.home-page) nav {
+    background: #A6E3E9; /* Solid light blue for other pages */
 }
 
 nav a {
     font-family: 'Lucidity Condensed', sans-serif;
-    color: #333;
+    color: white; /* White text */
     text-decoration: none;
     margin: 0 20px;
     font-size: 20px;
@@ -58,7 +70,7 @@ nav a:hover {
 .video-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust height as needed */
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
 }
 
@@ -66,9 +78,11 @@ nav a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
     height: auto;
+    transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
@@ -77,18 +91,17 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-weight: bold;
-    color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
 }
 
+.hero-text img {
+    width: 500px; /* Adjust size as needed */
+    height: auto;
+}
 
 .flex-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
     padding: 50px 20px;
@@ -168,4 +181,46 @@ button:active {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Nectarine', sans-serif;
     color: #333;
+}
+
+/* Responsive Grid for About Page */
+.subsection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.subsection {
+    background-color: #FFD6E0;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.subsection img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.about-description, .content-section {
+    padding: 20px;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .subsection-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .subsection img {
+        width: 100%;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
 }
