@@ -92,11 +92,34 @@ nav a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 90%; /* Added to ensure content doesn't touch screen edges */
+    max-width: 1200px; /* Maximum width for very large screens */
 }
 
 .hero-text img {
-    width: 500px; /* Adjust size as needed */
+    width: 100%; /* Make image responsive */
+    max-width: 500px; /* Maximum size on larger screens */
     height: auto;
+    transition: width 0.3s ease; /* Smooth transition for size changes */
+}
+
+/* Added responsive breakpoints for the logo */
+@media screen and (max-width: 1200px) {
+    .hero-text img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-text img {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text img {
+        max-width: 250px;
+    }
 }
 
 .flex-container {
