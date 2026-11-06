@@ -1,22 +1,62 @@
 @font-face {
     font-family: 'Nectarine';
-    src: url('./fonts/Nectarine DEMO.ttf') format('truetype');
+    src: url('../fonts/Nectarine DEMO.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+/* ===== Spongebob bubble intro overlay ===== */
+#bubble-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.8s ease-out;
+    background: #000;
+    mix-blend-mode: screen;
+}
+#bubble-intro.fadeout { opacity: 0; }
+
+#bubble-intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.intro-playing { overflow: hidden; }
+
 @font-face {
     font-family: 'Lucidity Condensed';
-    src: url('./fonts/lucidballpoint.ttf') format('truetype');
+    src: url('../fonts/lucidballpoint.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Bricolage Grotesque';
-    src: url('./fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+    src: url('../fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpongeBoy';
+    src: url('../fonts/SpongeboyRegular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --sb-yellow: #FFD93D;
+    --sb-yellow-light: #FFE86E;
+    --sb-yellow-deep: #F4C20D;
+    --sb-blue: #1E88E5;
+    --sb-blue-deep: #0D47A1;
+    --sb-blue-light: #B3E5FC;
+    --sb-blue-sky: #E0F4FF;
+    --sb-white: #FFFFFF;
+    --sb-text: #1A1A1A;
 }
 
 body {
@@ -38,12 +78,11 @@ nav {
     z-index: 1000;
 }
 
-.home-page nav {
-    background: rgba(0, 0, 0, 0) !important; /* Fully transparent for home page */
-}
-
+.home-page nav,
 :not(.home-page) nav {
-    background: #A6E3E9; /* Solid light blue for other pages */
+    background: linear-gradient(180deg, var(--sb-blue-deep) 0%, var(--sb-blue) 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    border-bottom: 4px solid var(--sb-yellow);
 }
 
 nav a {
@@ -324,4 +363,297 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
     }
 }
+}
+
+/* Spongebob theme overrides */
+body {
+    background: linear-gradient(180deg, var(--sb-blue-sky) 0%, var(--sb-blue-light) 60%, #7FCDEE 100%) !important;
+    background-attachment: fixed;
+    color: var(--sb-text);
+}
+
+nav { padding: 1.1rem 24px 0.6rem !important; }
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.9rem !important;
+    text-align:center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-brand,
+nav a.nav-brand {
+    font-family: 'Spongeboy', sans-serif !important;
+    font-size: clamp(1.4rem, 2.6vw,  1.9rem) !important;
+    color: var(--sb-yellow) !important;
+    text-decoration: none !important;
+    text-shadow: 3px 3px 0 var(--sb-blue), 4px 4px 0 rgba(0, 0, 0, 0.25) !important;
+    letter-spacing: 2px !important;
+    line-height: 1 !important;
+    text-transform: none !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    margin: 0 !important;
+}
+.nav-brand:hover,
+nav a.nav-brand:hover {
+    color: var(--sb-yellow-light) !important;
+    transform: translateY(-1px);
+}
+
+nav a {
+    color: var(--sb-white) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+nav a:not(.nav-brand):hover { color: var(--sb-yellow) !important; }
+
+/* Home page hero */
+.hero-text { z-index: 2; }
+.hero-title {
+    font-family: 'Spongeboy', sans-serif;
+    font-size: clamp(3.5rem, 14vw, 9rem);
+    color: var(--sb-yellow);
+    text-shadow:
+        4px 4px 0 var(--sb-blue),
+        8px 8px 0 var(--sb-blue-deep),
+        14px 14px 28px rgba(0, 0, 0, 0.45);
+    letter-spacing: 4px;
+    margin: 0;
+    line-height: 0.95;
+}
+.hero-tag {
+    font-family: 'Lucidity Condensed', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    color: var(--sb-white);
+    margin-top: 1.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.55);
+}
+
+h1, h2, h3 {
+    font-family: 'Spongeboy', sans-serif !important;
+    color: var(--sb-blue-deep) !important;
+    letter-spacing: 1px;
+}
+
+/* Buttons */
+button {
+    background-color: var(--sb-red) !important;
+    color: var(--sb-white) !important;
+    border: 3px solid var(--sb-yellow) !important;
+    border-radius: 999px !important;
+    padding: 14px 36px !important;
+    font-family: 'Lucidity Condensed', sans-serif !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+button:hover { background-color: var(--sb-red-deep) !important; }
+
+.floating-button {
+    background-color: var(--sb-yellow) !important;
+    color: var(--sb-blue-deep) !important;
+    border: 3px solid var(--sb-red) !important;
+    border-radius: 999px !important;
+    font-family: 'Lucidity Condensed', sans-serif !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 0 var(--sb-red-deep), 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+.floating-button:hover {
+    background-color: var(--sb-yellow-light) !important;
+    color: var(--sb-blue-deep) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 0 var(--sb-red-deep), 0 8px 14px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Content cards for About / Teams / Tickets */
+.content-section {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 4px solid var(--sb-yellow) !important;
+    border-radius: 24px !important;
+    padding: 2.5rem !important;
+    box-shadow: 0 10px 30px rgba(13, 71, 161, 0.18) !important;
+}
+.content-section h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    text-shadow: 3px 3px 0 var(--sb-yellow);
+}
+
+.subsection {
+    background-color: var(--sb-yellow) !important;
+    border: 3px solid var(--sb-red) !important;
+    border-radius: 18px !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.subsection:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); }
+.subsection h3 {
+    font-family: 'Spongeboy', sans-serif !important;
+    color: var(--sb-blue-deep) !important;
+    margin-top: 0;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+.subsection .social-links a { color: var(--sb-blue-deep) !important; font-weight: 700; }
+
+.teams-description,
+.about-description {
+    background-color: var(--sb-blue-light) !important;
+    border-left: 6px solid var(--sb-blue-deep) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--sb-text);
+}
+
+/* Event info */
+.event-info {
+    background: transparent !important;
+    max-width: 900px !important;
+    margin: 4rem auto !important;
+    padding: 1rem !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.event-info h2 {
+    font-family: 'Spongeboy', sans-serif !important;
+    font-size: clamp(2.5rem, 6vw, 4.25rem) !important;
+    color: var(--sb-blue-deep) !important;
+    text-shadow: 4px 4px 0 var(--sb-yellow);
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem !important;
+    text-align: center;
+}
+.event-detail-row {
+    font-size: 1.3rem !important;
+    margin-bottom: 1.5rem !important;
+    align-items: center !important;
+}
+.event-icon { font-size: 1.75rem !important; width: auto !important; }
+.event-detail-label { color: var(--sb-red); font-weight: 800; }
+.event-description {
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
+    color: var(--sb-text);
+    margin-top: 2.5rem;
+}
+.event-description strong { color: var(--sb-red); }
+
+/* Footer */
+.footer {
+    background: var(--sb-blue-deep);
+    color: var(--sb-white);
+    text-align:center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    border-top: 4px solid var(--sb-yellow);
+}
+.footer-text { margin: 0; letter-spacing: 1px; }
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        background-color: var(--sb-blue-deep) !important;
+    }
+    .nav-brand { font-size: 1.4rem;}
+    nav a {font-size: 0.95rem;}
+    .event-info { margin: 2rem auto !important; }
+    .content-section { padding: 1.5rem !important; }
+}
+
+/* Spongebob character sprinkles */
+.sb-sprinkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.92;
+    filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.25));
+    animation: sb-float 6s ease-in-out infinite;
+    user-select: none;
+    --webkit-user-drag: none;
+}
+
+@keyframes sb-float {
+    0%, 100% { transform: translateY(0) rotate(var(--sb-rot, 0deg)); }
+    50% { transform: translateY(-14px) rotate(var(--sb-rot, 0deg)); }
+}
+
+/* Home page placements */
+.sb-sprinkle--spongebob {
+    width: 135px;
+    bottom: 24px;
+    left: 24px;
+    --sb-rot: -6deg;
+    animation-delay: 0s;
+}
+
+/* Tickets page: make Spongebob pop more */
+.page-tickets .sb-sprinkle--spongbebob {
+    opacity: 1;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+}
+
+.sb-sprinkle--patrick {
+    width: 135px;
+    top: 120px;
+    right: 32px;
+    --sb-rot: 8deg;
+    animation-delay: 1.2s;
+}
+
+.sb-sprinkle--gary {
+    width: 135px;
+    top: 110px;
+    left: 24px;
+    --sb-rot: -4deg;
+    animation-delay: 2.4s;
+}
+
+/* About / Teams / Tickets placements */
+.sb-sprinkle--krabs {
+    width: 135px;
+    top: 110px;
+    right: 32px;
+    --sb-rot: 6deg;
+    animation-delay: 0.4s;
+}
+.sb-sprinkle--sandy {
+    width: 130px;
+    bottom: 30px;
+    left: 24px;
+    --sb-rot: -8deg;
+    animation-delay: 1.6s;
+}
+.sb-sprinkle--squidward {
+    width: 115px;
+    bottom: 30px;
+    left: 24px;
+    --sb-rot: -4deg;
+    animation-delay: 0.8s;
+}
+.sb-sprinkle--plankton {
+    width: 130px;
+    top: 130px;
+    right: 24px;
+    --sb-rot: 0deg;
+    animation-delay: 3s;
+}
+
+.floating-button { z-index: 50; }
+
+@media (maxwidth: 768px) {
+    .sb-sprinkle { display: none; }
 }
