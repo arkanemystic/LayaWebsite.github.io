@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
         intro.classList.remove('fade-out');
         document.body.classList.add('intro-playing');
         video.currentTime = 0;
-    }
 
     // Try unmuted autoplay first; silently fall back to muted if blocked.
     video.muted = false;
@@ -35,6 +34,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     clearTimeout(fallbackTimer);
     fallbackTimer = setTimeout(finish, 10000); // Fallback in case video doesn't end
+};
+
+    const unmute = () => {
+        if (video.paused || !video.muted) return;
+        video.muted = false;
+        video.play().catch(() => {
+            video.muted = true;
+            video.play().catch(finish);
+        });
+    };
+    ['touchend', 'click', 'keydown'].forEach((type) => document.addEventListener(type, unmute, true));
 
     video.addEventListener('ended', finish);
     video.addEventListener('error', finish);

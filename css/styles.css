@@ -372,11 +372,15 @@ body {
     color: var(--sb-text);
 }
 
-nav { padding: 1.1rem 24px 0.6rem !important; }
+nav { 
+    padding: 1.1rem 24px 0.6rem !important;
+    box-sizing: border-box;
+}
 
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
+    box-sizing: border-box;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -565,13 +569,21 @@ button:hover { background-color: var(--sb-blue-deep) !important; }
 
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
+    nav { padding: 0.75rem 16px !important; }
+    .nav-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        padding: 0;
+    }
     .nav-links {
         background-color: var(--sb-blue-deep) !important;
     }
     .nav-brand { font-size: 1.4rem;}
     nav a {font-size: 0.95rem;}
+    .container { width: auto; padding-left: 16px; padding-right: 16px; }
     .event-info { margin: 2rem auto !important; }
     .content-section { padding: 1.5rem !important; }
+    body:has(.floating-button) .footer { padding-bottom: 6rem;}
 }
 
 /* Spongebob character sprinkles */
