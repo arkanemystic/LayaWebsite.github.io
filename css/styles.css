@@ -583,7 +583,7 @@ button:hover { background-color: var(--sb-blue-deep) !important; }
     .nav-brand { font-size: 1.4rem;}
     nav a {font-size: 0.95rem;}
     .container { width: auto; padding-left: 16px; padding-right: 16px; }
-    .container-section h1 { font-size: 2rem; }
+    .content-section h1 { font-size: 2rem; }
     .event-info { margin: 2rem auto !important; }
     .content-section { padding: 1.5rem !important; }
     body:has(.floating-button) .footer { padding-bottom: 6rem;}
