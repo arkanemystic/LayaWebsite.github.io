@@ -16,7 +16,7 @@
     background: #000;
     mix-blend-mode: screen;
 }
-#bubble-intro.fadeout { opacity: 0; }
+#bubble-intro.fade-out { opacity: 0; }
 
 #bubble-intro video {
     width: 100%;
@@ -451,7 +451,7 @@ h1, h2, h3 {
 
 /* Buttons */
 button {
-    background-color: var(--sb-red) !important;
+    background-color: var(--sb-blue) !important;
     color: var(--sb-white) !important;
     border: 3px solid var(--sb-yellow) !important;
     border-radius: 999px !important;
@@ -460,23 +460,23 @@ button {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-button:hover { background-color: var(--sb-red-deep) !important; }
+button:hover { background-color: var(--sb-blue-deep) !important; }
 
 .floating-button {
     background-color: var(--sb-yellow) !important;
     color: var(--sb-blue-deep) !important;
-    border: 3px solid var(--sb-red) !important;
+    border: 3px solid var(--sb-blue) !important;
     border-radius: 999px !important;
     font-family: 'Lucidity Condensed', sans-serif !important;
     letter-spacing: 2px;
     text-transform: uppercase;
-    box-shadow: 0 6px 0 var(--sb-red-deep), 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 6px 0 var(--sb-blue-deep), 0 10px 20px rgba(0, 0, 0, 0.2) !important;
 }
 .floating-button:hover {
     background-color: var(--sb-yellow-light) !important;
     color: var(--sb-blue-deep) !important;
     transform: translateY(-3px);
-    box-shadow: 0 4px 0 var(--sb-red-deep), 0 8px 14px rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0 4px 0 var(--sb-blue-deep), 0 8px 14px rgba(0, 0, 0, 0.22) !important;
 }
 
 /* Content cards for About / Teams / Tickets */
@@ -494,7 +494,7 @@ button:hover { background-color: var(--sb-red-deep) !important; }
 
 .subsection {
     background-color: var(--sb-yellow) !important;
-    border: 3px solid var(--sb-red) !important;
+    border: 3px solid var(--sb-blue) !important;
     border-radius: 18px !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -543,14 +543,14 @@ button:hover { background-color: var(--sb-red-deep) !important; }
     align-items: center !important;
 }
 .event-icon { font-size: 1.75rem !important; width: auto !important; }
-.event-detail-label { color: var(--sb-red); font-weight: 800; }
+.event-detail-label { color: var(--sb-blue); font-weight: 800; }
 .event-description {
     font-size: 1.2rem !important;
     line-height: 1.8 !important;
     color: var(--sb-text);
     margin-top: 2.5rem;
 }
-.event-description strong { color: var(--sb-red); }
+.event-description strong { color: var(--sb-blue); }
 
 /* Footer */
 .footer {
@@ -583,7 +583,7 @@ button:hover { background-color: var(--sb-red-deep) !important; }
     filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.25));
     animation: sb-float 6s ease-in-out infinite;
     user-select: none;
-    --webkit-user-drag: none;
+    -webkit-user-drag: none;
 }
 
 @keyframes sb-float {
@@ -601,7 +601,7 @@ button:hover { background-color: var(--sb-red-deep) !important; }
 }
 
 /* Tickets page: make Spongebob pop more */
-.page-tickets .sb-sprinkle--spongbebob {
+.page-tickets .sb-sprinkle--spongebob {
     opacity: 1;
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
 }
@@ -647,13 +647,13 @@ button:hover { background-color: var(--sb-red-deep) !important; }
 .sb-sprinkle--plankton {
     width: 130px;
     top: 130px;
-    right: 24px;
+    left: 24px;
     --sb-rot: 0deg;
     animation-delay: 3s;
 }
 
 .floating-button { z-index: 50; }
 
-@media (maxwidth: 768px) {
+@media (max-width: 768px) {
     .sb-sprinkle { display: none; }
 }

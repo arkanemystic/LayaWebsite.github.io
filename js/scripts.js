@@ -5,29 +5,25 @@ document.addEventListener("DOMContentLoaded", function() {
 // Spongebob bubble intro
 (function playBubbleIntro() {
     // Homepage only
-    if (!document.body.classList.contains('homepage')) return;
+    if (!document.body.classList.contains('home-page')) return;
 
     const intro = document.getElementById('bubble-intro');
-    if (!intro) return;
-
-    // Once per browser session
-    if (sessionStorage.getItem('bubbleIntroPlayed')) {
-        intro.remove();
-        return;
-    }
-
-    document.body.classList.add('intro-playing');
     const video = document.getElementById('bubble-intro-video');
-    let finished = false;
+    if (!intro || !video) return;
+
+    let fallbackTimer;
 
     const finish = () => {
-        if (finished) return;
-        finished = true;
+        clearTimeout(fallbackTimer);
         intro.classList.add('fade-out');
         document.body.classList.remove('intro-playing');
-        sessionStorage.setItem('bubbleIntroPlayed', '1');
-        setTimeout(() => intro.remove(), 600);
     };
+
+    const play = () => {
+        intro.classList.remove('fade-out');
+        document.body.classList.add('intro-playing');
+        video.currentTime = 0;
+    }
 
     // Try unmuted autoplay first; silently fall back to muted if blocked.
     video.muted = false;
@@ -37,9 +33,16 @@ document.addEventListener("DOMContentLoaded", function() {
         video.play().catch(finish);
     });
 
+    clearTimeout(fallbackTimer);
+    fallbackTimer = setTimeout(finish, 10000); // Fallback in case video doesn't end
+
     video.addEventListener('ended', finish);
     video.addEventListener('error', finish);
-    setTimeout(finish, 10000); // Fallback in case video doesn't end
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) play();
+    });
+
+    play();
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
